@@ -13,9 +13,10 @@ class Api::V1::MunchiesController < ApplicationController
     location_coordinates = LocationFacade.get_coordinates(params[:end])
     weather_poro = WeatherFacade.get_weather_data(location_coordinates)
 
-    restaurant_list[:businesses].map do |business|
-      poro = RestaurantPoro.new(business, travel_time_hrs, destination, weather_poro.current_weather)
+    poro_list = restaurant_list[:businesses].map do |business|
+      RestaurantPoro.new(business, travel_time_hrs, destination, weather_poro.current_weather)
     end
-    render json: RestaurantSerializer.new(poro)
+
+    render json: RestaurantSerializer.new(poro_list)
   end
 end
