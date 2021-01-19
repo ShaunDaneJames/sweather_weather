@@ -7,8 +7,16 @@ class Api::V1::MunchiesController < ApplicationController
 
     travel_time = LocationFacade.travel_time(origin, destination)
     eta = (Time.now.to_i + travel_time)
-    
-    YelpFacade.find_restaurants(destination, cuisine, eta)
+    travel_time_hrs = (travel_time.to_f/60)/60
+    restaurant_list = YelpFacade.find_restaurants(destination, cuisine, eta)
+
+    location_coordinates = LocationFacade.get_coordinates(params[:end])
+    weather_poro = WeatherFacade.get_weather_data(location_coordinates)
+require "pry"; binding.pry
+    restaurant_list[:businesses].map do |business|
+      RestaurantPoro.new(business, travel_time_hrs, destination, weather_poro.current_weather)
+    end
+
     require "pry"; binding.pry
   end
 end

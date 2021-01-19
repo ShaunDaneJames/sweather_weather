@@ -7,9 +7,7 @@ class YelpService
       req.params[:open_at] = eta
     end
 
-    restaurant_list = JSON.parse(restaurant_data.body, symbolize_names: true)
-
-    YelpService.get_open_restaurants_at_eta(restaurant_list, travel_time)
+    JSON.parse(restaurant_data.body, symbolize_names: true)
   end
 
   def self.conn
@@ -17,13 +15,5 @@ class YelpService
     url: (ENV['YELP_URL'].to_s),
     headers: { Authorization: "Bearer #{(ENV['YELP_API_KEY'])}" }
     )
-  end
-
-  def self.get_open_restaurants_at_eta(restaurant_list, travel_time)
-    require "pry"; binding.pry
-
-    restaurant_list.find_all do |restaurant|
-      require "pry"; binding.pry
-    end
   end
 end
