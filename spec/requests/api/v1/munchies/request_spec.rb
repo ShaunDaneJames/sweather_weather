@@ -6,7 +6,6 @@ describe 'exposes GET /api/v1/munchies?start=denver,co&end=pueblo,co&food=chines
     get '/api/v1/munchies?start=denver,co&end=pueblo,co&food=chinese'
 
     expect(response).to be_successful
-require "pry"; binding.pry
     data = JSON.parse(response.body, symbolize_names: true)
 
     expect(data).to have_key(:id)
