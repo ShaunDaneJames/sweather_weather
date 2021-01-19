@@ -17,6 +17,7 @@ class Api::V1::MunchiesController < ApplicationController
       RestaurantPoro.new(business, travel_time_hrs, destination, weather_poro.current_weather)
     end
 
-    render json: RestaurantSerializer.new(poro_list)
+    x = render json: RestaurantSerializer.new(poro_list)
+    require "pry"; binding.pry
   end
 end

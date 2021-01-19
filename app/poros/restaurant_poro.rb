@@ -1,11 +1,11 @@
 class RestaurantPoro
   attr_reader :destination_city, :travel_time, :forecast, :restaurant
 
-  def initialize(restaurant_data, travel_time_hrs, destination, current_weather)
+  def initialize(restaurant_data, travel_time, destination, current_weather)
     @name = restaurant_data[:name]
     @address = restaurant_data[:location][:display_address]
     @destination_city = destination
-    @travel_time_hrs = travel_time_hrs
+    @travel_time = travel_time
     @current_weather = current_weather
   end
 
