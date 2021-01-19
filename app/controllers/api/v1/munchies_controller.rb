@@ -5,9 +5,10 @@ class Api::V1::MunchiesController < ApplicationController
     destination = params[:end]
     cuisine = params[:food]
 
-    LocationFacade.travel_time(origin, destination)
-
-    x = YelpFacade.find_restaurants(destination, cuisine)
+    travel_time = LocationFacade.travel_time(origin, destination)
+    eta = (Time.now.to_i + travel_time)
+    
+    YelpFacade.find_restaurants(destination, cuisine, eta)
     require "pry"; binding.pry
   end
 end
