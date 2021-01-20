@@ -1,6 +1,7 @@
 class FoodieFacade
 
   def self.get_foodie_data(start, destination, search)
+
     travel_time = MapQuestService.get_travel_time(start, destination)
 
     destination_coordinates = LocationFacade.get_coordinates(destination)
