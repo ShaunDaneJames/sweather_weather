@@ -8,5 +8,10 @@ describe 'exposes GET /api/v1/foodie?start=denver,co&end=pueblo,co&search=italia
     get '/api/v1/foodie?start=denver,co&end=pueblo,co&search=italian', headers: headers
 
     expect(response).to be_successful
+
+    foodie = JSON.parse(response.body, symbolize_names: true)
+
+    expect(foodie[:data]).to be_a(Hash)
+    expect(foodie[:data]).to have_key(:id)
   end
 end
