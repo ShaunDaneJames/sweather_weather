@@ -4,6 +4,11 @@ class User < ApplicationRecord
   validates_presence_of :email
   validates_uniqueness_of :email
 
+  validates_presence_of :api_key
+  validates_uniqueness_of :api_key
+
+  validates_presence_of :password_confirmation
+
   def self.find_or_create(user)
     User.find_by(email: user[:email]) ||
     User.new(

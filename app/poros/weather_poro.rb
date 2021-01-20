@@ -49,7 +49,7 @@ class WeatherPoro
     end
   end
 
-  def convert_K_to_C(temp)
+  def convert_K_to_F(temp)
     ((temp - 273.15) * 9/5 + 32).round(1)
   end
 end
