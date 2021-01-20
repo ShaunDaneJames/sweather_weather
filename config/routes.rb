@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
       resources :sessions, only: %i[create]
 
+      resources :road_trip, only: %i[create]
       #Munchies
       get '/munchies', to: 'munchies#show'
     end
