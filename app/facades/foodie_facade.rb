@@ -9,7 +9,6 @@ class FoodieFacade
 
     restaurant = FoodieService.get_restaurant(search, destination_coordinates)
 
-    require "pry"; binding.pry
     FoodieRestaurantPoro.new(restaurant, arrival_forecast, travel_time)
   end
 end

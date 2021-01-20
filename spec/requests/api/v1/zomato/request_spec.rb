@@ -13,5 +13,9 @@ describe 'exposes GET /api/v1/foodie?start=denver,co&end=pueblo,co&search=italia
 
     expect(foodie[:data]).to be_a(Hash)
     expect(foodie[:data]).to have_key(:id)
+    expect(foodie[:data][:attributes]).to have_key(:end_location)
+    expect(foodie[:data][:attributes]).to have_key(:travel_time)
+    expect(foodie[:data][:attributes][:forecast]).to have_key(:temperature)
+    expect(foodie[:data][:attributes][:restaurant]).to have_key(:address)
   end
 end
