@@ -14,6 +14,9 @@ Rails.application.routes.draw do
       resources :road_trip, only: %i[create]
       #Munchies
       get '/munchies', to: 'munchies#show'
+
+      #Foodie
+      get '/foodie', to: 'foodie#show'
     end
   end
 end
