@@ -7,7 +7,12 @@ This API fetches data from several locations. It does so to aggregate data for t
 - [Gems](#gems)
 - [Setup](#setup)
 - [Endpoints](#endpoints)
-- [FutureGoals](#futuregoals)
+  - [Forecast](#forecast)
+  - [Background](#background)
+  - [Users](#users)
+  - [Sessions](#sessions)
+  - [Road Trip](#roadtrip)
+- [FutureGoals](#future-goals)
 
 ## Gems
 
