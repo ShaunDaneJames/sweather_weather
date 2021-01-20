@@ -5,7 +5,7 @@ class Api::V1::RoadTripController < ApplicationController
 
     user = User.find_by(api_key: data[:api_key])
     if !user
-      render json: { message: 'Unauthorized' }
+      render json: {message: 'Unauthorized' }, status: 401
     else
     road_trip = RoadTripFacade.get_road_trip(data[:origin], data[:destination])
       render json: RoadTripSerializer.new(road_trip)
