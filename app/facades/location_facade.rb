@@ -5,4 +5,8 @@ class LocationFacade
 
     LocationPoro.new(coordnate_data)
   end
+
+  def self.travel_time(origin, destination)
+    LocationService.get_travel_time(origin, destination)
+  end
 end

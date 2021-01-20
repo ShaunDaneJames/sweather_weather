@@ -1,4 +1,4 @@
-class LocationService
+class MapQuestService
 
   def self.get_travel_time(origin, destination)
     time_data = LocationService.conn.get('/directions/v2/route') do |req|
@@ -6,8 +6,7 @@ class LocationService
     req.params[:to] = destination
     end
 
-    time_in_seconds = JSON.parse(time_data.body, symbolize_names: true)[:route][:legs].first[:time]
-    # (time_in_seconds.to_f/60)/60
+    JSON.parse(time_data.body, symbolize_names: true)[:route][:legs].first[:time]
   end
 
   def self.get_coordinates(location)
