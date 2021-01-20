@@ -4,7 +4,7 @@ describe 'exposes POST /api/v1/road_trip' do
   it 'creates a road_trip and respondes with JSON' do
     user = User.create!(email: 'someone@example.com',
                         password: 'EZPZ123',
-                        password_digest: 'EZPZ123',
+                        password_confirmation: 'EZPZ123',
                         api_key: 'b3083e4e-250f-490f-971f-f764f242fd71')
     road_trip_data =
     {
@@ -30,7 +30,7 @@ describe 'exposes POST /api/v1/road_trip' do
   it 'renders an unauthorized message if presented with bad credentials' do
     user = User.create!(email: 'someone@example.com',
                         password: 'EZPZ123',
-                        password_digest: 'EZPZ123',
+                        password_confirmation: 'EZPZ123',
                         api_key: 'b3083e4e-250f-490f-971f-f764f242fd71')
     road_trip_data =
     {
