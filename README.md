@@ -7,6 +7,7 @@ This API fetches data from several locations. It does so to aggregate data for t
 - [Gems](#gems)
 - [Setup](#setup)
 - [Endpoints](#endpoints)
+- [FutureGoals](#futuregoals)
 
 ## Gems
 
@@ -238,3 +239,7 @@ This API uses the following gems:
     }
 }
 ```
+## Future Goals:
+- Account for road trips longer than 48 hours
+- Account for road trips across the ocean
+- Get more accurate weather at ETA
