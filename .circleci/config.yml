@@ -9,5 +9,6 @@ jobs:
     executor: ruby/default
     steps:
       - checkout
+      - run: bundle update --bundler
       - run: bundle install
       - run: rails db:{create,migrate}
