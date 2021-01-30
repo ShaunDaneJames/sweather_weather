@@ -10,7 +10,5 @@ jobs:
     steps:
       - checkout
       - run: gem update --system
-      - run: gem install bundler
       - run: bundle update --bundler
-      - run: bundle install
-      - run: rails db:{create,migrate}
+      - run: gem install bundler
