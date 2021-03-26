@@ -33,7 +33,27 @@ This API uses the following gems:
 
 3. ```rails db:{create,migrate}```
 
-4. Obtain your own API keys
+4. Obtain your own API keys and set up your yml file. Please obtain keys for the following:
+
+```
+MAP_QUEST_URL: http://www.mapquestapi.com
+MAP_QUEST_API_KEY: 
+MAP_QUEST_SECRET: 
+
+OPEN_WEATHER_MAP_URL: https://api.openweathermap.org
+OPEN_WEATHER_MAP_API_KEY: 
+
+UNSPLASH_URL: https://api.unsplash.com
+UNSPLASH_ACCESS_KEY: 
+UNSPLASH_SECRET_KEY: 
+
+YELP_URL: https://api.yelp.com
+YELP_API_KEY: 
+YELP_CLIENT_ID: 
+
+ZOMATO_URL: https://developers.zomato.com
+ZOMATO_API_KEY: 
+```
 
 5. ```rails s```
 
