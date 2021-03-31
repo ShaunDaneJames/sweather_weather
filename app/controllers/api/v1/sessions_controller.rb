@@ -5,7 +5,6 @@ class Api::V1::SessionsController < ApplicationController
     user = User
               .find_by(email: user_params[:email])
               .try(:authenticate, user_params[:password])
-
     if user
       session[:user_id] = user.id
       render json: SessionSerializer.new(user)
